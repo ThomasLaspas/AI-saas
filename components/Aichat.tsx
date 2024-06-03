@@ -69,9 +69,9 @@ function Aichat() {
 
                 setmsg((current) => [...current, userMessage, data])
                 form.reset()
-                const audioUrl = await voice(data.content);
-                const ai = new Audio(audioUrl)
-                ai.play()
+                //const audioUrl = await voice(data.content);
+                //const ai = new Audio(audioUrl)
+                //ai.play()
                 await addtrie()
 
             } catch (err: any) {
