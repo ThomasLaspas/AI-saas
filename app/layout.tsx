@@ -8,7 +8,7 @@ import StarsCanvas from "@/components/Starback";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ultron",
+  title: "Friday",
   description: "Ai platform",
 };
 

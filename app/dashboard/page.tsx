@@ -50,12 +50,7 @@ async function page() {
                             Lets make a photos that only exist in yoour imagination.
                         </AccordionContent>
                     </AccordionItem>
-                    <AccordionItem value="item-4" className="px-10 mt-10 bg-primary text-background rounded-xl hover:shadow-md hover:shadow-primary">
-                        <AccordionTrigger><div className="flex items-center gap-6 sm:text-lg text-md "><VideoIcon width={24} height={24} />Video Generation</div></AccordionTrigger>
-                        <AccordionContent>
-                            Make video like Avengers age of ultron, its my favourite movie.
-                        </AccordionContent>
-                    </AccordionItem>
+
                     <AccordionItem value="item-5" className="px-10 mt-10 bg-primary text-background rounded-xl hover:shadow-md hover:shadow-primary">
                         <AccordionTrigger><div className="flex items-center gap-6 sm:text-lg text-md text-nowrap" ><CodeIcon width={24} height={24} />Code Generation</div></AccordionTrigger>
                         <AccordionContent>
