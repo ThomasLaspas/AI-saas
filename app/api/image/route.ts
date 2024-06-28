@@ -38,7 +38,7 @@ export async function POST(
             n: amount,
             size: resolution,
         })
-        console.log(response)
+       
         return NextResponse.json(response.data[0])
      
 

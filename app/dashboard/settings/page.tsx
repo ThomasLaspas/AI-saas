@@ -9,7 +9,7 @@ async function page() {
     let user
     if (data) {
         user = await readprem(data.user?.id)
-        console.log(user)
+
     }
 
     const defaultUser = {

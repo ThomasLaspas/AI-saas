@@ -30,7 +30,7 @@ export async function POST(req: any) {
         const subscription = await stripe.subscriptions.list({
           customer: customer.id,
         });
-        console.log(subscription);
+       
         if (subscription.data.length) {
           const sub = subscription.data[0];
 
@@ -42,7 +42,7 @@ export async function POST(req: any) {
           );
         }
       default:
-        console.log(`Unhandled event type ${event.type}`);
+      
     }
     return Response.json({});
   } catch (e) {
@@ -70,7 +70,7 @@ const onSuccessSubscription = async (
     if(error){
       console.log(error)
     }
-    console.log(data)
+   
   await supabase.auth.admin.updateUserById(data?.id!, {
     user_metadata: { stripe_customer_id: null },
   });
