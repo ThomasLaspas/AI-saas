@@ -34,7 +34,7 @@ function ProgressCard({ dt }: { dt: any }) {
 
             const dat = await readprem(dt?.id)
             setpremium(dat?.premium)
-            console.log(dat)
+
             if (dat?.free_tries === 0) {
                 return
             } else if (dat?.free_tries === 1) {
@@ -65,7 +65,7 @@ function ProgressCard({ dt }: { dt: any }) {
                 'postgres_changes',
                 { event: 'UPDATE', schema: 'public', table: 'users' },
                 (payload) => {
-                    console.log('Change received!', payload)
+
                     const newUser = payload.new as User;
                     if (newUser.free_tries === 0) {
                         return
@@ -103,7 +103,7 @@ function ProgressCard({ dt }: { dt: any }) {
             window.location.href = data.url;
         });
     };
-    console.log(dt)
+
     return (
         <>
             {premium ? <Card >

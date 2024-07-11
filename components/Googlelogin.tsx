@@ -24,7 +24,7 @@ const Goggleloginbutton = () => {
       if (error) {
         console.error("Sign-in error:", (error as Error).message);
       } else {
-        console.log("Sign-in success:", data);
+
         // Handle redirection after successful sign-in if needed
         redirect("/api/callback2");
       }
