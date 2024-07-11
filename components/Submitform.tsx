@@ -31,7 +31,7 @@ const formSchema = z.object({
         },
         {
             message: "Passwords do not match",
-            path: ["passwordConfirm"],
+            path: ["passconf"],
         }
     );
 interface Props {
@@ -54,13 +54,22 @@ function Submitform({ sign, change }: Props) {
         },
     });
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
-
+        setload2(true);
         if (values.pass === values.passconf) {
-            setload2(true);
             const { error } = await supabase.auth.signUp({
                 email: values.email,
                 password: values.pass,
             });
+
+            if (error) {
+                toast({
+                    variant: "destructive",
+                    title: "Uh oh! Something went wrong.",
+                    description: `${error.message}`,
+                });
+                setload2(false);
+                return;
+            }
 
             toast({
                 variant: "default",
@@ -69,26 +78,7 @@ function Submitform({ sign, change }: Props) {
             });
             change()
             setload2(false);
-            if (error) {
-                toast({
-                    variant: "destructive",
-                    title: "Uh oh! Something went wrong.",
-                    description: "There was a problem with your details try again.",
-                });
-                setload2(false);
-                return;
-            }
 
-
-
-        } else {
-            toast({
-                variant: "destructive",
-                title: "Uh oh! Something went wrong.",
-                description: "Your password didnt match.",
-            });
-            setload2(false);
-            return;
         }
     };
     return (
