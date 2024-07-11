@@ -81,6 +81,14 @@ function Submitform({ sign, change }: Props) {
             setload2(false);
 
 
+        } else {
+            toast({
+                variant: "destructive",
+                title: "Uh oh! Something went wrong.",
+                description: "Your password didnt match.",
+            });
+            setload2(false);
+            return;
         }
     };
     return (
