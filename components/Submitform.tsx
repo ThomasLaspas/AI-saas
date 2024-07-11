@@ -62,7 +62,13 @@ function Submitform({ sign, change }: Props) {
                 password: values.pass,
             });
 
-
+            toast({
+                variant: "default",
+                title: "You create o profile succefully.",
+                description: `Check your verification email that we sent to ${values.email}.`,
+            });
+            change()
+            setload2(false);
             if (error) {
                 toast({
                     variant: "destructive",
@@ -72,13 +78,7 @@ function Submitform({ sign, change }: Props) {
                 setload2(false);
                 return;
             }
-            toast({
-                variant: "default",
-                title: "You create o profile succefully.",
-                description: `Check your verification email that we sent to ${values.email}.`,
-            });
-            change()
-            setload2(false);
+
 
 
         } else {
