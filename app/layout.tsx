@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Header from "@/components/header";
 import StarsCanvas from "@/components/Starback";
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
 
           <StarsCanvas />
           {children}
+          <Toaster />
         </ThemeProvider>{" "}
       </body>
     </html>
